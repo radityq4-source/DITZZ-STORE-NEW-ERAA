@@ -16,7 +16,7 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background: url('https://res.cloudinary.com/dr0lwxa50/image/upload/v1772604351/IMG_20260304_060933_vcnxr2.jpg') no-repeat center center fixed;
+background:url('https://res.cloudinary.com/dr0lwxa50/image/upload/v1772604351/IMG_20260304_060933_vcnxr2.jpg') no-repeat center center fixed;
 background-size:cover;
 color:white;
 text-align:center;
@@ -24,7 +24,7 @@ overflow-x:hidden;
 position:relative;
 }
 
-/* Overlay gelap elegan */
+/* Overlay elegan biar ga norak */
 body::before{
 content:"";
 position:fixed;
@@ -33,84 +33,61 @@ left:0;
 width:100%;
 height:100%;
 background:linear-gradient(180deg,rgba(0,0,0,0.85),rgba(90,0,0,0.85));
-z-index:-2;
-}
-
-/* Partikel merah animasi */
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-overflow:hidden;
 z-index:-1;
 }
 
+/* Partikel merah */
 .particles span{
-position:absolute;
-display:block;
+position:fixed;
 width:6px;
 height:6px;
 background:#ff1a1a;
 border-radius:50%;
-animation:animate 15s linear infinite;
+animation:floatUp 12s linear infinite;
 opacity:0.6;
 }
 
-@keyframes animate{
+@keyframes floatUp{
 0%{transform:translateY(100vh) scale(0);}
 100%{transform:translateY(-10vh) scale(1);}
 }
 
-/* Banner atas */
-.banner{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:300px;
-background:url('https://res.cloudinary.com/dr0lwxa50/image/upload/v1772603510/IMG_20260304_125125_zqe2jd.jpg') center/cover;
-filter:brightness(40%);
-z-index:-1;
-}
-
 .container{
-padding:120px 20px 40px;
+padding:80px 20px 40px;
 }
 
 /* Icon JB */
 .profile-img{
-width:140px;
-height:140px;
+width:150px;
+height:150px;
 border-radius:50%;
 border:4px solid #ff1a1a;
-box-shadow:0 0 35px #ff0000;
-animation:float 4s ease-in-out infinite;
+box-shadow:0 0 40px #ff0000;
+animation:floating 4s ease-in-out infinite;
 }
 
-@keyframes float{
+@keyframes floating{
 0%{transform:translateY(0);}
 50%{transform:translateY(-12px);}
 100%{transform:translateY(0);}
 }
 
 h1{
-margin-top:15px;
+margin-top:18px;
 font-size:22px;
 letter-spacing:2px;
 color:#ff4d4d;
 text-shadow:0 0 15px #ff0000;
 }
 
-/* Button Style */
+/* Tombol */
 .link-btn{
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-background:rgba(255,0,0,0.12);
-backdrop-filter:blur(10px);
+background:rgba(255,0,0,0.15);
+backdrop-filter:blur(12px);
 border:1px solid rgba(255,0,0,0.3);
 padding:15px;
 margin:15px auto;
@@ -121,15 +98,14 @@ color:white;
 text-decoration:none;
 font-weight:500;
 transition:0.4s ease;
-transform-style:preserve-3d;
 opacity:0;
 animation:fadeUp 1s forwards;
 }
 
 .link-btn:hover{
-transform:scale(1.07) rotateX(5deg);
+transform:scale(1.07);
 background:linear-gradient(45deg,#660000,#ff0000);
-box-shadow:0 0 25px #ff1a1a;
+box-shadow:0 0 30px #ff1a1a;
 }
 
 .link-btn img{
@@ -148,22 +124,18 @@ height:22px;
 from{transform:translateY(30px);opacity:0;}
 to{transform:translateY(0);opacity:1;}
 }
-
 </style>
 </head>
 <body>
 
+<!-- Partikel -->
 <div class="particles">
 <span style="left:10%; animation-delay:0s;"></span>
-<span style="left:20%; animation-delay:2s;"></span>
-<span style="left:35%; animation-delay:4s;"></span>
-<span style="left:50%; animation-delay:1s;"></span>
-<span style="left:65%; animation-delay:3s;"></span>
-<span style="left:80%; animation-delay:5s;"></span>
-<span style="left:90%; animation-delay:6s;"></span>
+<span style="left:25%; animation-delay:2s;"></span>
+<span style="left:45%; animation-delay:4s;"></span>
+<span style="left:65%; animation-delay:1s;"></span>
+<span style="left:85%; animation-delay:3s;"></span>
 </div>
-
-<div class="banner"></div>
 
 <div class="container">
 
