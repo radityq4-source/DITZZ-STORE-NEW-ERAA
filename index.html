@@ -8,115 +8,160 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-background: linear-gradient(180deg,#1a0000,#330000,#1a0000);
-color: white;
-text-align: center;
-overflow-x: hidden;
+body{
+background: url('https://res.cloudinary.com/dr0lwxa50/image/upload/v1772604351/IMG_20260304_060933_vcnxr2.jpg') no-repeat center center fixed;
+background-size:cover;
+color:white;
+text-align:center;
+overflow-x:hidden;
+position:relative;
 }
 
-/* Background Banner */
-.banner {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 300px;
-background: url('https://res.cloudinary.com/dr0lwxa50/image/upload/v1772603510/IMG_20260304_125125_zqe2jd.jpg') center/cover;
-filter: brightness(40%);
-z-index: -1;
+/* Overlay gelap elegan */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,rgba(0,0,0,0.85),rgba(90,0,0,0.85));
+z-index:-2;
 }
 
-/* Container */
-.container {
-padding: 120px 20px 40px;
+/* Partikel merah animasi */
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+overflow:hidden;
+z-index:-1;
+}
+
+.particles span{
+position:absolute;
+display:block;
+width:6px;
+height:6px;
+background:#ff1a1a;
+border-radius:50%;
+animation:animate 15s linear infinite;
+opacity:0.6;
+}
+
+@keyframes animate{
+0%{transform:translateY(100vh) scale(0);}
+100%{transform:translateY(-10vh) scale(1);}
+}
+
+/* Banner atas */
+.banner{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:300px;
+background:url('https://res.cloudinary.com/dr0lwxa50/image/upload/v1772603510/IMG_20260304_125125_zqe2jd.jpg') center/cover;
+filter:brightness(40%);
+z-index:-1;
+}
+
+.container{
+padding:120px 20px 40px;
 }
 
 /* Icon JB */
-.profile-img {
-width: 130px;
-height: 130px;
-border-radius: 50%;
-border: 4px solid #ff1a1a;
-box-shadow: 0 0 25px #ff0000;
-animation: float 4s ease-in-out infinite;
+.profile-img{
+width:140px;
+height:140px;
+border-radius:50%;
+border:4px solid #ff1a1a;
+box-shadow:0 0 35px #ff0000;
+animation:float 4s ease-in-out infinite;
 }
 
-/* Floating animation */
-@keyframes float {
-0% {transform: translateY(0px);}
-50% {transform: translateY(-10px);}
-100% {transform: translateY(0px);}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
 }
 
-h1 {
-margin-top: 15px;
-font-size: 20px;
-letter-spacing: 2px;
-color: #ff4d4d;
+h1{
+margin-top:15px;
+font-size:22px;
+letter-spacing:2px;
+color:#ff4d4d;
+text-shadow:0 0 15px #ff0000;
 }
 
 /* Button Style */
-.link-btn {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-background: rgba(255,0,0,0.15);
-backdrop-filter: blur(8px);
-border: 1px solid rgba(255,0,0,0.3);
-padding: 15px;
-margin: 15px auto;
-width: 95%;
-max-width: 420px;
-border-radius: 15px;
-color: white;
-text-decoration: none;
-font-weight: 500;
-transition: all 0.4s ease;
-position: relative;
-overflow: hidden;
+.link-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+background:rgba(255,0,0,0.12);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,0,0,0.3);
+padding:15px;
+margin:15px auto;
+width:95%;
+max-width:420px;
+border-radius:18px;
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.4s ease;
+transform-style:preserve-3d;
+opacity:0;
+animation:fadeUp 1s forwards;
 }
 
-.link-btn:hover {
-transform: scale(1.05);
-background: linear-gradient(45deg,#990000,#ff0000);
-box-shadow: 0 0 20px #ff1a1a;
+.link-btn:hover{
+transform:scale(1.07) rotateX(5deg);
+background:linear-gradient(45deg,#660000,#ff0000);
+box-shadow:0 0 25px #ff1a1a;
 }
 
-.link-btn img {
-width: 22px;
-height: 22px;
+.link-btn img{
+width:22px;
+height:22px;
 }
 
-/* Fade animation */
-.link-btn {
-animation: fadeInUp 1s ease forwards;
-opacity: 0;
-}
+.link-btn:nth-child(3){animation-delay:0.3s;}
+.link-btn:nth-child(4){animation-delay:0.5s;}
+.link-btn:nth-child(5){animation-delay:0.7s;}
+.link-btn:nth-child(6){animation-delay:0.9s;}
+.link-btn:nth-child(7){animation-delay:1.1s;}
+.link-btn:nth-child(8){animation-delay:1.3s;}
 
-.link-btn:nth-child(1){animation-delay:0.3s;}
-.link-btn:nth-child(2){animation-delay:0.5s;}
-.link-btn:nth-child(3){animation-delay:0.7s;}
-.link-btn:nth-child(4){animation-delay:0.9s;}
-.link-btn:nth-child(5){animation-delay:1.1s;}
-.link-btn:nth-child(6){animation-delay:1.3s;}
-
-@keyframes fadeInUp {
-from {transform: translateY(20px); opacity:0;}
-to {transform: translateY(0); opacity:1;}
+@keyframes fadeUp{
+from{transform:translateY(30px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
 }
 
 </style>
 </head>
 <body>
+
+<div class="particles">
+<span style="left:10%; animation-delay:0s;"></span>
+<span style="left:20%; animation-delay:2s;"></span>
+<span style="left:35%; animation-delay:4s;"></span>
+<span style="left:50%; animation-delay:1s;"></span>
+<span style="left:65%; animation-delay:3s;"></span>
+<span style="left:80%; animation-delay:5s;"></span>
+<span style="left:90%; animation-delay:6s;"></span>
+</div>
 
 <div class="banner"></div>
 
@@ -146,12 +191,12 @@ to {transform: translateY(0); opacity:1;}
 (𝙇𝙄𝙉𝙆 𝙎𝘼𝙇𝙐𝙍𝘼𝙉 𝙒𝙃𝘼𝙏𝙏𝙎𝘼𝙋 𝘿𝙄𝙏𝙕𝙕 𝙎𝙏𝙊𝙍𝙀)
 </a>
 
-<a href="https://www.instagram.com/jb_ditzzzx79?igsh=MWZmN2NkYmZmNXZmNQ==" class="link-btn">
+<a href="https://www.instagram.com/jb_ditzzzx79" class="link-btn">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 (𝙇𝙄𝙉𝙆 𝘼𝙆𝙐𝙉 𝙄𝙉𝙎𝙏𝘼𝙂𝙍𝘼𝙈 𝙐𝙏𝘼𝙈𝘼 𝘿𝙄𝙏𝙕𝙕 𝙎𝙏𝙊𝙍𝙀)
 </a>
 
-<a href="https://www.tiktok.com/@ditzx79_jb?_r=1&_t=ZS-94OqfsXrehL" class="link-btn">
+<a href="https://www.tiktok.com/@ditzx79_jb" class="link-btn">
 <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
 (𝙇𝙄𝙉𝙆 𝘼𝙆𝙐𝙉 𝙏𝙄𝙆𝙏𝙊𝙆 𝙐𝙏𝘼𝙈𝘼 𝘿𝙄𝙏𝙕𝙕 𝙎𝙏𝙊𝙍𝙀)
 </a>
